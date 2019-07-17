@@ -76,33 +76,30 @@ const students = [
     }
 ]
 
-const createStudentFailing = (student) => {
-    return `
-        <div class="student">
-            <h1>${student.name}</h1>
-            <section>${student.subject}</section>
-            <aside>${student.info}</aside>
-        </div>
-    `
+const createStudentH1 = (student) => {
+    return `<h1 class="xx-large ${student.score >= 60 ? 'passing' : 'failing'}">${student.name}</h1>`;
 }
 
-const createStudentPassing = (student) => {
-    return `<div class="student">
-    <h1 class="xx-large passing">${student.name}</h1>
-    <section class="bordered dashed section--padded">${student.subject}</section>
-    <aside class="pushRight">${student.info}</aside>
-    </div>`;
+const createStudentSection = (student) => {
+    return `<section class="bordered dashed section--padded">${student.subject}</section>`;
 }
+
+const createStudentAside = (student) => {
+    return `<aside class="pushRight">${student.info}</aside>`;
+}
+
+const createStudentComponent = (student) => {
+    return `<div class="student"> 
+                ${createStudentH1(student)} 
+                ${createStudentSection(student)} 
+                ${createStudentAside(student)} 
+            </div>`;
+};
 
 const studentContainer = document.querySelector("#container");
 
 students.forEach(student => {
-    if (student.score >= 60) {
-        const content = createStudentPassing(student);
-        studentContainer.innerHTML += content;
-    }   else {
-        const content = createStudentFailing(student);
-        studentContainer.innerHTML += content;
-    }
+    const content = createStudentComponent(student);
+    studentContainer.innerHTML += content;
 });
 
