@@ -139,11 +139,7 @@ const msgSection3 = document.createElement('section');
 const msgSection4 = document.createElement('section');
 const msgSection5 = document.createElement('section');
 
-msgSection1.className = 'message';
-msgSection2.className = 'message';
-msgSection3.className = 'message';
-msgSection4.className = 'message';
-msgSection5.className = 'message';
+const messageSections = [msgSection1, msgSection2, msgSection3, msgSection4, msgSection5];
 
 msgSection1.textContent = 'Are we doing fireworks this year?';
 msgSection2.textContent = "After last year's 'tree incident', should we ?";
@@ -151,11 +147,11 @@ msgSection3.textContent = "The fire fighters put it out in like a minute. Wasn't
 msgSection4.textContent = "We can set them off in the street.";
 msgSection5.textContent = "Our neighbors' houses are flammable, too.";
 
-messageContainer.appendChild(msgSection1);
-messageContainer.appendChild(msgSection2);
-messageContainer.appendChild(msgSection3);
-messageContainer.appendChild(msgSection4);
-messageContainer.appendChild(msgSection5);
+messageSections.forEach(message => {
+    message.className = 'message';
+    messageContainer.appendChild(message);
+});
+
 
 
 
