@@ -1,4 +1,3 @@
-
 // ---------- Practice: Student Components ----------
 
 const students = [
@@ -132,6 +131,7 @@ Using createElement(), you're going to create a simple list of chat messages tha
 4. Using appendChild(), attach each message as a child to the messages element.*/
 
 const messageContainer = document.querySelector('#messages');
+const messageFragment = document.createDocumentFragment();
 
 const msgSection1 = document.createElement('section');
 const msgSection2 = document.createElement('section');
@@ -149,8 +149,10 @@ msgSection5.textContent = "Our neighbors' houses are flammable, too.";
 
 messageSections.forEach(message => {
     message.className = 'message';
-    messageContainer.appendChild(message);
+    messageFragment.appendChild(message);
 });
+
+messageContainer.appendChild(messageFragment);
 
 
 
