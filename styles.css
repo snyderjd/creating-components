@@ -32,3 +32,8 @@
 .failing {
     color: orange;
 }
+
+.message {
+    border: 1px solid goldenrod;
+    background-color: lightgray;
+}
