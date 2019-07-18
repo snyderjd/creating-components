@@ -122,3 +122,43 @@ const createHTMLComponent = (type, content, className) => {
 
 const myNewElement = createHTMLComponent('h2', 'My New Element', 'passing');
 studentContainer.innerHTML += myNewElement;
+
+/* --------------- Challenge: Creating Elements ---------------
+Using createElement(), you're going to create a simple list of chat messages that you might have with one of your family members. Maybe it's that wacky aunt that you see every Christmas and Fourth of July.
+
+1. Put an article DOM element in your index.html with the id attribute value of messages.
+2. In your JavaScript, use querySelector() to obtain a reference to that article DOM element.
+3. Create five(5) section components, each with a class of message, and with the content of your choosing.
+4. Using appendChild(), attach each message as a child to the messages element.*/
+
+const messageContainer = document.querySelector('#messages');
+
+const msgSection1 = document.createElement('section');
+const msgSection2 = document.createElement('section');
+const msgSection3 = document.createElement('section');
+const msgSection4 = document.createElement('section');
+const msgSection5 = document.createElement('section');
+
+msgSection1.className = 'message';
+msgSection2.className = 'message';
+msgSection3.className = 'message';
+msgSection4.className = 'message';
+msgSection5.className = 'message';
+
+msgSection1.textContent = 'Are we doing fireworks this year?';
+msgSection2.textContent = "After last year's 'tree incident', should we ?";
+msgSection3.textContent = "The fire fighters put it out in like a minute. Wasn't even a real fire.";
+msgSection4.textContent = "We can set them off in the street.";
+msgSection5.textContent = "Our neighbors' houses are flammable, too.";
+
+messageContainer.appendChild(msgSection1);
+messageContainer.appendChild(msgSection2);
+messageContainer.appendChild(msgSection3);
+messageContainer.appendChild(msgSection4);
+messageContainer.appendChild(msgSection5);
+
+
+
+
+
+
