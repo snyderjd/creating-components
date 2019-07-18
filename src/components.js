@@ -103,3 +103,22 @@ students.forEach(student => {
     studentContainer.innerHTML += content;
 });
 
+
+/* 
+--------------- Challenge: Generic HTML Function ---------------
+Look at the three functions you created to build an h1, a section, and an aside.Notice that each one follows the same pattern of accepting a single argument - a string - and outputting a single HTML component.Since there is a pattern, you can consider writing a single function that generalizes the creation of an HTML component even further.
+
+Create one function that will generate any HTML component, with any content.It should be defined with three arguments.
+
+1. The type of HTML component to make
+2. The content of the component
+3. The value of the class attribute */
+
+const createHTMLComponent = (type, content, className) => {
+    return `<${type} class="${className}"> ${content} </${type}>`
+}
+
+// Create an h2 element and place into the studentContainer div.
+
+const myNewElement = createHTMLComponent('h2', 'My New Element', 'passing');
+studentContainer.innerHTML += myNewElement;
